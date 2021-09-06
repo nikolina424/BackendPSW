@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PSWHospital.DTOs.Requests;
 using PSWHospital.Models;
 using PSWHospital.Repositories;
 
@@ -24,6 +25,16 @@ namespace PSWHospital.Services.impl
         public async Task<ActionResult<IEnumerable<Patient>>> GetPatients()
         {
             return await _patientRepository.GetPatients();
+        }
+
+        public bool Block(BlockedUserRequest blockedUserRequest)
+        {
+            return _patientRepository.Block(blockedUserRequest);
+        }
+
+        public List<Patient> GetMaliciousPatients()
+        {
+            return _patientRepository.GetMaliciousPatients();
         }
     }
 }

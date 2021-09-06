@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PSWHospital.DTOs.Requests;
 using PSWHospital.Models;
 using PSWHospital.Services;
 
@@ -32,6 +33,18 @@ namespace PSWHospital.Controllers
         public async Task<ActionResult<Patient>> GetPatient(int id)
         {
             return await _patientService.GetPatient(id);
+        }
+
+        [HttpPut("block")]     
+        public bool Block(BlockedUserRequest blockedUserRequest)
+        {
+            return _patientService.Block(blockedUserRequest);
+        }
+
+        [HttpGet("malicious")] 
+        public List<Patient> GetMaliciousPatients()
+        {
+            return _patientService.GetMaliciousPatients();
         }
 
     }

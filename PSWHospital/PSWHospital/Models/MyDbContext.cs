@@ -23,11 +23,10 @@ namespace PSWHospital.Models
 
             using var hmac = new HMACSHA512();
             modelBuilder.Entity<Patient>()
-                .HasData(
-                    new Patient { Id = 1, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 5, PasswordSalt = hmac.Key, UserName = "patient1@gmail.com", UserType = User.UserTypes.PATIENT, FirstName = "Jovana", LastName = "Jovanic", IsDeleted = false },
-                    new Patient { Id = 2, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 6, PasswordSalt = hmac.Key, UserName = "patient2@gmail.com", UserType = User.UserTypes.PATIENT, FirstName = "Ivana", LastName = "Ivanic", IsDeleted = false },
-                    new Patient { Id = 3, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 7, PasswordSalt = hmac.Key, UserName = "patient3@gmail.com", UserType = User.UserTypes.PATIENT, FirstName = "Marko", LastName = "Markovic", IsDeleted = false },
-                    new Patient { Id = 4, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 8, PasswordSalt = hmac.Key, UserName = "patient4@gmail.com", UserType = User.UserTypes.PATIENT, FirstName = "Stefan", LastName = "Stefanovic", IsDeleted = false }
+                .HasData(new Patient { Id = 1, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 5, PasswordSalt = hmac.Key, UserName = "patient1@gmail.com", UserType = Models.User.UserTypes.PATIENT, FirstName = "Marina", LastName = "Ivankovic", IsDeleted = false, CanceledExamination = 3 },
+                         new Patient { Id = 2, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 6, PasswordSalt = hmac.Key, UserName = "patient2@gmail.com", UserType = Models.User.UserTypes.PATIENT, FirstName = "Marko", LastName = "Markovic", IsDeleted = false, CanceledExamination = 4 },
+                         new Patient { Id = 3, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 7, PasswordSalt = hmac.Key, UserName = "patient3@gmail.com", UserType = Models.User.UserTypes.PATIENT, FirstName = "Ivan", LastName = "Ivanic", IsDeleted = false, CanceledExamination = 0 },
+                         new Patient { Id = 4, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), IdGeneralPractitioner = 8, PasswordSalt = hmac.Key, UserName = "patient4@gmail.com", UserType = Models.User.UserTypes.PATIENT, FirstName = "Jovan", LastName = "Jovanic", IsDeleted = false, CanceledExamination = 0 }
                 );
 
             modelBuilder.Entity<Doctor>()

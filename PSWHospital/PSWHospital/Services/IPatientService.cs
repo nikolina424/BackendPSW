@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PSWHospital.DTOs.Requests;
 using PSWHospital.Models;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,7 @@ namespace PSWHospital.Services
     {
         Task<ActionResult<Patient>> GetPatient(int id);
         Task<ActionResult<IEnumerable<Patient>>> GetPatients();
+        bool Block(BlockedUserRequest blockedUserRequest);
+        List<Patient> GetMaliciousPatients();
     }
 }

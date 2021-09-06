@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Moq;
+using PSWHospital.DTOs.Requests;
 using PSWHospital.DTOs.Responses;
 using PSWHospital.Models;
 using PSWHospital.Repositories;
@@ -100,6 +101,46 @@ namespace HospitalTests
 
             ActionResult<Admin> a = await adminService.GetAdmin(1);
             Assert.Null(a);
+        }
+
+        [Fact]
+        public void BlockPatientSuccessfully()
+        {
+            var patientRepository = new Mock<IPatientRepository>();
+            var patient = new Patient() { FirstName = "test", LastName = "test", CanceledExamination = 4 };
+            var blockedUserRequest = new BlockedUserRequest()
+            {
+                Id = 0
+            };
+
+            patientRepository.Setup(r => r.Block(blockedUserRequest)).Returns(true);
+
+            PatientService patientService = new PatientService(patientRepository.Object);
+
+            bool p =  patientService.Block(blockedUserRequest);
+            Assert.True(p);
+        }
+
+        [Fact]
+        public void BlockPatientUnsuccessfully()
+        {
+            var patientRepository = new Mock<IPatientRepository>();
+            var patient = new Patient() { FirstName = "test", LastName = "test", CanceledExamination = 4 };
+            var blockedUserRequest = new BlockedUserRequest()
+            {
+                Id = 0
+            };
+            var blockedUserRequest2 = new BlockedUserRequest()
+            {
+                Id = 1
+            };
+
+            patientRepository.Setup(r => r.Block(blockedUserRequest)).Returns(true);
+
+            PatientService patientService = new PatientService(patientRepository.Object);
+
+            bool p = patientService.Block(blockedUserRequest2);
+            Assert.False(p);
         }
     }
 }
