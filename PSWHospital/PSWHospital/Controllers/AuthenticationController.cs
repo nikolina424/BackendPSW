@@ -25,5 +25,11 @@ namespace PSWHospital.Controllers
             return await _authenticationService.Login(loginDto);
         }
 
+        [HttpPost("register")]
+        public async Task<ActionResult<UserResponse>> Register(RegistrationRequest registrationRequest)
+        {
+            return await _authenticationService.Register(registrationRequest);
+        }
+
     }
 }

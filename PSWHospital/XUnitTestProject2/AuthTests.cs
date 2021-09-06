@@ -41,7 +41,26 @@ namespace XUnitTestProject2
             Assert.NotNull(p);
         }
 
+        [Fact]
+        public async Task ShouldRegisterSuccessfully()
+        {
+            var _authRepository = new Mock<IAuthenticationRepository>();
+            using var hmac = new HMACSHA512();
+            var registrationRequest = new RegistrationRequest
+            {
+                Username = "patient1@gmail.com",
+                Password = "password"
+            };
+            var userResponse = new UserResponse() { Username = "patient1@gmail.com" };
 
-      
+            _authRepository.Setup(r => r.Register(registrationRequest)).ReturnsAsync(userResponse);
+
+            PSWHospital.Services.impl.AuthenticationService authenticationService = new PSWHospital.Services.impl.AuthenticationService(_authRepository.Object);
+            ActionResult<UserResponse> p = await authenticationService.Register(registrationRequest);
+            Assert.NotNull(p);
+        }
+
+
+
     }
 }

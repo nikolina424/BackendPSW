@@ -14,9 +14,14 @@ namespace PSWHospital.Services.impl
         {
             _authenticationRepository = authenticationRepository ?? throw new ArgumentNullException(nameof(authenticationRepository));
         }
-        public Task<ActionResult<UserResponse>> Login(LoginRequest loginDto)
+        public Task<ActionResult<UserResponse>> Login(LoginRequest loginRequest)
         {
-            return _authenticationRepository.Login(loginDto);
+            return _authenticationRepository.Login(loginRequest);
+        }
+
+        public Task<ActionResult<UserResponse>> Register(RegistrationRequest registrationRequest)
+        {
+            return _authenticationRepository.Register(registrationRequest);
         }
     }
 }

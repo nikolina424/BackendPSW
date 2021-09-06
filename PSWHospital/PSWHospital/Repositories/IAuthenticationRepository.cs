@@ -7,6 +7,7 @@ namespace PSWHospital.Repositories
 {
     public interface IAuthenticationRepository
     {
-        Task<ActionResult<UserResponse>> Login(LoginRequest loginDto);
+        Task<ActionResult<UserResponse>> Login(LoginRequest loginRequest);
+        Task<ActionResult<UserResponse>> Register(RegistrationRequest registrationRequest);
     }
 }

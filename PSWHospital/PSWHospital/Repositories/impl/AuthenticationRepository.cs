@@ -69,5 +69,37 @@ namespace PSWHospital.Repositories.impl
             }
 
         }
+
+        public async Task<ActionResult<UserResponse>> Register(RegistrationRequest registrationRequest)
+        {
+            if (await UserExists(registrationRequest.Username)) throw new Exception("Username is taken");
+
+            using var hmac = new HMACSHA512();
+            var patient = new Patient
+            {
+
+                PasswordSalt = hmac.Key,
+                UserName = registrationRequest.Username,
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registrationRequest.Password)),
+                FirstName = registrationRequest.FirstName,
+                LastName = registrationRequest.LastName,
+                Town = registrationRequest.Town,
+                Address = registrationRequest.Address,
+                IdGeneralPractitioner = registrationRequest.IdGeneralPractitioner,
+                UserType = Models.User.UserTypes.PATIENT
+            };
+            dbContext.Patients.Add(patient);
+            await dbContext.SaveChangesAsync();
+            return new UserResponse
+            {
+                Username = patient.UserName,
+                Token = _tokenService.CreateToken(patient)
+            };
+        }
+
+        private async Task<bool> UserExists(string username)
+        {
+            return await dbContext.Users.AnyAsync(x => x.UserName == username.ToLower());
+        }
     }
 }
