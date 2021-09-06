@@ -1,9 +1,0 @@
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\bin\Debug\netstandard2.0\PSWHospitalTests.deps.json
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\bin\Debug\netstandard2.0\PSWHospitalTests.dll
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\obj\Debug\netstandard2.0\PSWHospitalTests.csprojAssemblyReference.cache
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\obj\Debug\netstandard2.0\PSWHospitalTests.AssemblyInfoInputs.cache
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\obj\Debug\netstandard2.0\PSWHospitalTests.AssemblyInfo.cs
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\bin\Debug\netstandard2.0\PSWHospitalTests.pdb
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\obj\Debug\netstandard2.0\PSWHospitalTests.csproj.CoreCompileInputs.cache
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\obj\Debug\netstandard2.0\PSWHospitalTests.dll
-C:\Users\inina\Desktop\psw back\PSWHospitalBackend-master\PSWHospital\PSWHospitalTests\obj\Debug\netstandard2.0\PSWHospitalTests.pdb

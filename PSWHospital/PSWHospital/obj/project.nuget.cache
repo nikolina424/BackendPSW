@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3dGYjAdw5JkoU57osFt1OIHnXvvScLGTmSF8RABqgRpvI7xc0s53xRp90b6xbLhKK2iyukNllXtJNBdtbvGx/Q==",
+  "dgSpecHash": "bSAWCWVs0pndr+bR/gimDBu6ooNPPSK3SVc1C2ed7nysQiqxI4tp7kk5ARo/z1oqek7Nw3XA76+pCpt0pzPgXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\inina\\Desktop\\psw back\\PSWHospitalBackend-master\\PSWHospital\\PSWHospital\\PSWHospital.csproj",
+  "projectFilePath": "C:\\Users\\inina\\Desktop\\poslednjibek\\BackendPSW\\PSWHospital\\PSWHospital\\PSWHospital.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\inina\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.6\\microsoft.aspnetcore.authentication.jwtbearer.3.1.6.nupkg.sha512",
     "C:\\Users\\inina\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.2\\microsoft.aspnetcore.jsonpatch.3.1.2.nupkg.sha512",

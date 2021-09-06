@@ -14,6 +14,7 @@ namespace PSWHospital.Models
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
 
@@ -51,6 +52,11 @@ namespace PSWHospital.Models
                 .HasData(
                     new Admin { Id = 19, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), PasswordSalt = hmac.Key, UserName = "admin@gmail.com", UserType = User.UserTypes.ADMIN, FirstName = "Nikolina", LastName = "Ivankovic" }
                 );
+            modelBuilder.Entity<Feedback>().HasData(
+               new Feedback { Id = 1, FeedbackContent = "I love your website!", ShowOnFront = true, UsersFirstName = "Dusan", UsersLastName = "Sisarica", PatientId = 2 },
+               new Feedback { Id = 2, FeedbackContent = "My favourite doctor is Jovana Nikolic!", ShowOnFront = true, PatientId = 1, UsersFirstName = "Marina", UsersLastName = "Ivankovic" }
+               );
         }
+
     }
 }
