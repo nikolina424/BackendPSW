@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PSWHospital.Models
 {
-    public class MyDbContext : DbContext
+    public class MyDbContext : DbContext, IDbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Patient> Patients { get; set; }
@@ -52,5 +52,6 @@ namespace PSWHospital.Models
                     new Admin { Id = 19, PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("password")), PasswordSalt = hmac.Key, UserName = "admin@gmail.com", UserType = User.UserTypes.ADMIN, FirstName = "Nikolina", LastName = "Ivankovic" }
                 );
         }
+
     }
 }

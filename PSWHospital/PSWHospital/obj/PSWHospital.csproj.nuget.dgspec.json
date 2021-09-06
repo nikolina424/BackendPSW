@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\inina\\Desktop\\psw back\\PSWHospitalBackend-master\\PSWHospital\\PSWHospital\\PSWHospital.csproj": {}
+    "C:\\Users\\inina\\Desktop\\poslednjibek\\BackendPSW\\PSWHospital\\PSWHospital\\PSWHospital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\inina\\Desktop\\psw back\\PSWHospitalBackend-master\\PSWHospital\\PSWHospital\\PSWHospital.csproj": {
+    "C:\\Users\\inina\\Desktop\\poslednjibek\\BackendPSW\\PSWHospital\\PSWHospital\\PSWHospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\inina\\Desktop\\psw back\\PSWHospitalBackend-master\\PSWHospital\\PSWHospital\\PSWHospital.csproj",
+        "projectUniqueName": "C:\\Users\\inina\\Desktop\\poslednjibek\\BackendPSW\\PSWHospital\\PSWHospital\\PSWHospital.csproj",
         "projectName": "PSWHospital",
-        "projectPath": "C:\\Users\\inina\\Desktop\\psw back\\PSWHospitalBackend-master\\PSWHospital\\PSWHospital\\PSWHospital.csproj",
+        "projectPath": "C:\\Users\\inina\\Desktop\\poslednjibek\\BackendPSW\\PSWHospital\\PSWHospital\\PSWHospital.csproj",
         "packagesPath": "C:\\Users\\inina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\inina\\Desktop\\psw back\\PSWHospitalBackend-master\\PSWHospital\\PSWHospital\\obj\\",
+        "outputPath": "C:\\Users\\inina\\Desktop\\poslednjibek\\BackendPSW\\PSWHospital\\PSWHospital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using PSWHospital.DTOs.Requests;
+using PSWHospital.DTOs.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace PSWHospital.Services
 {
-    interface IAuthenticationService
+    public interface IAuthenticationService
     {
+        Task<ActionResult<UserResponse>> Login(LoginRequest loginDto);
     }
 }

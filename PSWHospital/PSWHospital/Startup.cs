@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using PSWHospital.Extensions;
 using PSWHospital.Repositories;
 using PSWHospital.Repositories.impl;
+using PSWHospital.Services;
+using PSWHospital.Services.impl;
 
 namespace PSWHospital
 {
@@ -22,7 +23,6 @@ namespace PSWHospital
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             //repositories
             services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
           

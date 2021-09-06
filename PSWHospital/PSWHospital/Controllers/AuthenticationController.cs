@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PSWHospital.DTOs.Requests;
+using PSWHospital.DTOs.Responses;
+using PSWHospital.Services;
 
 namespace PSWHospital.Controllers
 
@@ -11,9 +12,18 @@ namespace PSWHospital.Controllers
     [ApiController]
     public class AuthenticationController : Controller
     {
-        public IActionResult Index()
+        private readonly IAuthenticationService _authenticationService;
+
+        public AuthenticationController(IAuthenticationService authenticationService)
         {
-            return View();
+            _authenticationService = authenticationService ?? throw new ArgumentNullException(nameof(authenticationService));
         }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<UserResponse>> Login(LoginRequest loginDto)
+        {
+            return await _authenticationService.Login(loginDto);
+        }
+
     }
 }
